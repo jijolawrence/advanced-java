@@ -37,23 +37,27 @@ public class SimpleThread implements Runnable {
  * Counter singleton class
  */
 final class Counter extends Observable {
-    private static Counter INSTANCE = new Counter();
-
-    static {
-        INSTANCE.addObserver(DuplicateCounterTracker.getInstance());
-    }
+    private static volatile Counter sCounterInstance;
 
     private AtomicInteger count;
 
     private Counter() {
+        if (sCounterInstance != null) {
+            throw new RuntimeException("Use the getInstance() method to get the singleton instance");
+        }
         count = new AtomicInteger();
     }
 
     public static Counter getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new Counter();
+        if (sCounterInstance == null) {
+            synchronized (Counter.class) {
+                if (sCounterInstance == null) {
+                    sCounterInstance = new Counter();
+                    sCounterInstance.addObserver(DuplicateCounterTracker.getInstance());
+                }
+            }
         }
-        return INSTANCE;
+        return sCounterInstance;
     }
 
     public int getCount() {
