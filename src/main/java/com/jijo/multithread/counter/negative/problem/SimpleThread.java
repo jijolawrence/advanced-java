@@ -71,16 +71,23 @@ final class Counter {
  * This class is just to track duplicate counters
  */
 final class DuplicateCounterTracker {
-    private static DuplicateCounterTracker INSTANCE = new DuplicateCounterTracker();
+    private static volatile DuplicateCounterTracker sDuplicateTrackerInstance;
 
     private DuplicateCounterTracker() {
+        if (sDuplicateTrackerInstance != null) {
+            throw new RuntimeException("Use the getInstance() method to get the singleton instance");
+        }
     }
 
     public static DuplicateCounterTracker getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new DuplicateCounterTracker();
+        if (sDuplicateTrackerInstance == null) {
+            synchronized (DuplicateCounterTracker.class) {
+                if (sDuplicateTrackerInstance == null) {
+                    sDuplicateTrackerInstance = new DuplicateCounterTracker();
+                }
+            }
         }
-        return INSTANCE;
+        return sDuplicateTrackerInstance;
     }
 
     //This is just to track the duplicate easily and normally a counter class will not contain such an instance variable
