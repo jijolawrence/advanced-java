@@ -1,0 +1,70 @@
+# manifest files
+**/MANIFEST.MF
+
+# Package Files #
+target
+target/**/*.jar
+*.war
+*.class
+
+
+# boilerplate generated classes #
+.apt_generated/
+generated-sources/
+
+# more caches and things from deploy #
+war/WEB-INF/deploy/
+war/WEB-INF/classes/
+
+# Eclipse generated files #
+.project
+.classpath
+*/.project
+*/.classpath
+
+*.pydevproject
+.metadata
+bin
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.bpmn/
+.loadpath
+*.ucls
+*.jar
+*.xml_gen
+*.java._trace
+*.xtendbin
+build
+git.properties
+**/xtend-gen/
+#Intellij
+*.iml
+*.idea
+# External tool builders
+.externalToolBuilders/
+RemoteSystemsTempFiles/
+/sql/
+
+# Locally stored "Eclipse launch configurations"
+#*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+# Others
+*.log
+*.out
+*_trace
+
+
+.DS_Store
+!**/maven-wrapper.jar
