@@ -1,1 +1,29 @@
 # advanced-java
+
+This repository is to store some of the advanced coding stuffs in java.
+
+Repository contains the below Scenarios so far:
+### 1. Hashmap  ###
+* Hashmap
+  * Negative Scenarios
+    * ConcurrentHashMap Key Null and throws exception
+    * ConCurrnetHashMap Value Null and throws exception
+    * Nomral HashMap concurrent modification issue
+  * Positive Scenarios
+    * HashMap resize with different load factors and Initial capacity
+* Immutable
+  * Negative Scenarios
+    * Immutability issue when using nested objects
+  * Positive Scenarios
+    * Solving Immutability issue when using nested objects
+* Multithreading
+  * Negative Scenarios
+    * Normal multithreading issue simulation
+    * Multithreading issue while using volatile keyword
+  * Positive Scenarios
+    * Solving multithread issue using AtomicInteger - advanced approach
+    * Solving multithread issue using synchronized keyword - traditional approach
+* Observable - Observer
+  * Positive Scenarios
+    * Using Observable and Observer while multithreading
+  
