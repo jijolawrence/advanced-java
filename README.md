@@ -25,4 +25,7 @@ Repository contains the below Scenarios so far:
 * Observable - Observer
   * Positive Scenarios
     * Using Observable and Observer while multithreading
+* Singleton
+  * Positive Scenarios
+    * A sample singleton class added for reference purpose
   
