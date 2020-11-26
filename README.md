@@ -3,7 +3,6 @@
 This repository is to store some of the advanced coding stuffs in java.
 
 Repository contains the below Scenarios so far:
-### 1. Hashmap  ###
 * Hashmap
   * Negative Scenarios
     * ConcurrentHashMap Key Null and throws exception
